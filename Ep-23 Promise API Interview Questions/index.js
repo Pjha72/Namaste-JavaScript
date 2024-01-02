@@ -12,22 +12,22 @@
 // for other promises to finish.
 
 // Code :
-// const p1 = new Promise((resolve, reject)=>{
-//     setTimeout(()=> resolve("P1 Success"),3000);
-// });
-// const p2 = new Promise((resolve, reject)=>{
-//     setTimeout(()=> resolve("P2 Success"),1000);
-//     // setTimeout(()=> reject("P2 Failed"),1000);
-// });
-// const p3 = new Promise((resolve, reject)=>{
-//     // setTimeout(()=> resolve("P3 Success"),2000);
-//     setTimeout(()=> reject("P3 Failed"),2000);
-// })
-// Promise.all([p1,p2,p3]).then(res => {
-//     console.log(res);
-// }).catch(err=>{
-//     console.error(err);
-// });
+const p1 = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve("P1 Success"),3000);
+});
+const p2 = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve("P2 Success"),1000);
+    // setTimeout(()=> reject("P2 Failed"),1000);
+});
+const p3 = new Promise((resolve, reject)=>{
+    // setTimeout(()=> resolve("P3 Success"),2000);
+    setTimeout(()=> reject("P3 Failed"),2000);
+})
+Promise.all([p1,p2,p3]).then(res => {
+    console.log(res);
+}).catch(err=>{
+    console.error(err);
+});
 
 
 // 2. Promise.allSettled()
@@ -40,22 +40,22 @@
 // it will return the result of all promises.[v1,err2,v3]
 
 // Code :
-// const ps1 = new Promise((resolve, reject)=>{
-//     setTimeout(()=> resolve("Ps1 Success"),3000);
-// });
-// const ps2 = new Promise((resolve, reject)=>{
-//     // setTimeout(()=> resolve("Ps2 Success"),1000);
-//     setTimeout(()=> reject("Ps2 Failed"),1000);
-// });
-// const ps3 = new Promise((resolve, reject)=>{
-//     setTimeout(()=> resolve("Ps3 Success"),2000);
-//     // setTimeout(()=> reject("Ps3 Failed"),2000);
-// })
-// Promise.allSettled([ps1,ps2,ps3]).then(res => {
-//     console.log(res);
-// }).catch(err=>{
-//     console.error(err);
-// });
+const ps1 = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve("Ps1 Success"),3000);
+});
+const ps2 = new Promise((resolve, reject)=>{
+    // setTimeout(()=> resolve("Ps2 Success"),1000);
+    setTimeout(()=> reject("Ps2 Failed"),1000);
+});
+const ps3 = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve("Ps3 Success"),2000);
+    // setTimeout(()=> reject("Ps3 Failed"),2000);
+})
+Promise.allSettled([ps1,ps2,ps3]).then(res => {
+    console.log(res);
+}).catch(err=>{
+    console.error(err);
+});
 
 
 // 3. Promise.race()
@@ -68,22 +68,22 @@
 // remaining promises will be ignored.
 
 // Code :
-// const pr1 = new Promise((resolve, reject)=>{
-//     setTimeout(()=> resolve("Pr1 Success"),3000);
-// });
-// const pr2 = new Promise((resolve, reject)=>{
-//     // setTimeout(()=> resolve("Pr2 Success"),1000);
-//     setTimeout(()=> reject("Pr2 Failed"),1000);
-// });
-// const pr3 = new Promise((resolve, reject)=>{
-//     // setTimeout(()=> resolve("Pr3 Success"),2000);
-//     setTimeout(()=> reject("Pr3 Failed"),2000);
-// })
-// Promise.race([pr1,pr2,pr3]).then(res => {
-//     console.log(res);
-// }).catch(err=>{
-//     console.error(err);
-// });
+const pr1 = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve("Pr1 Success"),3000);
+});
+const pr2 = new Promise((resolve, reject)=>{
+    // setTimeout(()=> resolve("Pr2 Success"),1000);
+    setTimeout(()=> reject("Pr2 Failed"),1000);
+});
+const pr3 = new Promise((resolve, reject)=>{
+    // setTimeout(()=> resolve("Pr3 Success"),2000);
+    setTimeout(()=> reject("Pr3 Failed"),2000);
+})
+Promise.race([pr1,pr2,pr3]).then(res => {
+    console.log(res);
+}).catch(err=>{
+    console.error(err);
+});
 
 // 4. Promise.any()
 // Case-1 : Promise.any([p1(3sec),p2(1sec),p3(2sec)])
